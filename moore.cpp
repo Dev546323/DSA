@@ -16,6 +16,14 @@ int moore (vector<int> a){
             frequency--;
         }
     }
+    int count{0};
+    for(int i:a){
+        if(num==i){
+            count++;
+        }
+    }
+    if(count>(a.size()/2)) return num;
+    else return -1;
 
     
 }
