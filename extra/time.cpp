@@ -74,6 +74,9 @@ void cubic(int a[], int b){
 
 }
 
+//2^n complexity, second to worst time complexity. generally found amongst recursion. 
+
+//n! n factorial complexity. the worst time complexity. also found amongst recursion. 
 
 
 
