@@ -8,3 +8,5 @@ check water.cpp for 2 pointer approach.
 basically checking both sides of the vector at the same time. 
 
 power.cpp uses binary operations to take out the power effeciently, 
+
+selfpdt.cpp is to take out the product of array except self 
