@@ -12,3 +12,9 @@ power.cpp uses binary operations to take out the power effeciently,
 selfpdt.cpp is to take out the product of array except self 
 
 * is the value at operator. 
+
+we know name of any array is a const pointer. and it always refers to the a[0]
+we can use pointer arithematic to change the pointer reference eg, we can use a+2 to make it so that the the a pointer refers to the    a[2] element now. 
+
+
+relational operators can be used on pointers 
