@@ -18,3 +18,6 @@ we can use pointer arithematic to change the pointer reference eg, we can use a+
 
 
 relational operators can be used on pointers 
+
+binary search algo is a kind of linear algo for SORTED arrays. 
+reduces time complexity from n to logn
