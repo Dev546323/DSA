@@ -29,9 +29,9 @@ vector<int> optimized(vector<int> arr){
     }
     return returnw;
 }
-vector<int> optimal(vector<int> arr){
+vector<long long> optimal(vector<int> arr){
   
-    vector<int> returnw(arr.size(),1);
+    vector<long long> returnw(arr.size(),1);
     int size=arr.size()-1;
     for(int i=1;i<=size;i++){
         returnw[i]*=returnw[i-1]*arr[i-1]; //prefix calculation directly into return array
@@ -48,8 +48,8 @@ vector<int> optimal(vector<int> arr){
 
 
 int main(){
-    vector<int> arr{1,2,3,4,5};
-    vector<int>ans = optimal(arr);
+    vector<int> arr{1,2,3,4,5,6,7,8,9,10};
+    vector<long long>ans = optimal(arr);
     for(int i:ans){
         cout<<i<<" ";
     }
