@@ -10,7 +10,7 @@ int index(vector<int> arr){
     
     while (start<=end){
         mid = start + (end-start)/2;
-        if(arr[mid]>arr[mid-1]and arr[mid]>arr[mid+1]) return mid;
+        if(arr[mid]>=arr[mid-1]and arr[mid]>=arr[mid+1]) return mid;
 
         if(arr[mid]>=arr[mid-1]){
             start=mid+1;
@@ -45,7 +45,7 @@ cout<<index(mountain_right_skewed) <<endl;
 cout<<index(mountain_far_peak) <<endl;
 cout<<index(not_mountain_decreasing) <<endl;
 cout<<index(not_mountain_increasing) <<endl;
-//cout<<index(not_mountain_flat_peak) <<endl;
+cout<<index(not_mountain_flat_peak) <<endl;
 cout<<index(not_mountain_duplicates) <<endl;
 cout<<index(mountain_big) <<endl;
 
