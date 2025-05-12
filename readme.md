@@ -21,3 +21,6 @@ relational operators can be used on pointers
 
 binary search algo is a kind of linear algo for SORTED arrays. 
 reduces time complexity from n to logn
+
+rotated array requires a modified binary search. 
+one side of the array will always be sorted. 
