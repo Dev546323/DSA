@@ -27,3 +27,7 @@ relational operators can be used on pointers
 
 
     mountain, another version of binary search 
+
+        unique.cpp unique number amongst sorted duplicates. 
+
+    books.cpp first hard problem. 
