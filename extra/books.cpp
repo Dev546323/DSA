@@ -32,6 +32,7 @@ int allocateBooks(vector<int> arr, int m ){
 
     for(int i:arr){ //the max number of books that can be allocated to a student is the total number of books present. 
         end+=i;
+        start = max(start,i); //binary search optimization. same thing that is used in the painters problem.
     }
     if(m==1) return end;
     while (start<end){

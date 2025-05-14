@@ -31,3 +31,4 @@ relational operators can be used on pointers
         unique.cpp unique number amongst sorted duplicates. 
 
     books.cpp first hard problem. 
+# painters problem is the same as books problem with the only difference being that start = max element from the array (because that is the time a painter has to take at the very least. )
