@@ -62,7 +62,7 @@ void insertion(vector<int> arr) {
         }
         arr[prev + 1] = current;
     }
-    print(arr);
+   // print(arr);
 }
 
 
@@ -142,7 +142,7 @@ insertion({});
 
 // 🚨 Stress 1: 1,000 elements in reverse
 // Bubble sort's worst-case, your patience's final test
-vector<int> stress1(100);
+vector<int> stress1(1000);
 iota(stress1.rbegin(), stress1.rend(), 1);
 cout<<endl<<"Stress1"<<endl<<endl;
 start = high_resolution_clock::now();
@@ -154,13 +154,20 @@ cout<<"Selection"<<endl;
 start = high_resolution_clock::now();
 selection(stress1);
 end = high_resolution_clock::now();
-cout<<"Insertion"<<endl;
+duration = duration_cast<microseconds>(end - start);
+cout << "Time taken: " << duration.count() << " microseconds" << endl;cout<<"Insertion"<<endl;
+start = high_resolution_clock::now();
+insertion(stress1);
+end = high_resolution_clock::now();
+duration = duration_cast<microseconds>(end - start);
+cout << "Time taken: " << duration.count() << " microseconds" << endl;
+
 
 
 
 // 🧨 Stress 2: 5,000 elements in random order
 // You might finish your degree before this finishes
-vector<int> stress2(500);
+vector<int> stress2(5000);
 generate(stress2.begin(), stress2.end(), rand);
 cout<<endl<<"Stress2"<<endl;
 start = high_resolution_clock::now();
@@ -174,6 +181,14 @@ selection(stress2);
 end = high_resolution_clock::now();
 duration = duration_cast<microseconds>(end - start);
 cout << "Time taken: " << duration.count() << " microseconds" << endl;
+cout<<"Insertion"<<endl;
+start = high_resolution_clock::now();
+insertion(stress2);
+end = high_resolution_clock::now();
+duration = duration_cast<microseconds>(end - start);
+cout << "Time taken: " << duration.count() << " microseconds" << endl;
+
+
 
 
 // 🧊 Stress 3: 1,000 elements, all same
@@ -191,10 +206,18 @@ selection(stress3);
 end = high_resolution_clock::now();
 duration = duration_cast<microseconds>(end - start);
 cout << "Time taken: " << duration.count() << " microseconds" << endl;
+cout<<"Insertion"<<endl;
+start = high_resolution_clock::now();
+insertion(stress3);
+end = high_resolution_clock::now();
+duration = duration_cast<microseconds>(end - start);
+cout << "Time taken: " << duration.count() << " microseconds" << endl;
+
+
 
 // 🔥 Stress 4: Already sorted 10,000 elements
 // Best-case scenario... but bubble sort still bubbles slowly
-vector<int> stress4(1000);
+vector<int> stress4(10000);
 iota(stress4.begin(), stress4.end(), 1);
 cout<<endl<<"Stress4"<<endl;
 start = high_resolution_clock::now();
@@ -208,10 +231,18 @@ selection(stress4);
 end = high_resolution_clock::now();
 duration = duration_cast<microseconds>(end - start);
 cout << "Time taken: " << duration.count() << " microseconds" << endl;
+cout<<"Insertion"<<endl;
+start = high_resolution_clock::now();
+insertion(stress4);
+end = high_resolution_clock::now();
+duration = duration_cast<microseconds>(end - start);
+cout << "Time taken: " << duration.count() << " microseconds" << endl;
+
+
 
 // 💣 Stress 5: Descending 10,000 elements (max torture)
 // Because who *doesn't* love nested loops?
-vector<int> stress5(1000);
+vector<int> stress5(10000);
 iota(stress5.rbegin(), stress5.rend(), 1);
 cout<<endl<<"Stress5"<<endl;
 start = high_resolution_clock::now();
@@ -225,6 +256,14 @@ selection(stress5);
 end = high_resolution_clock::now();
 duration = duration_cast<microseconds>(end - start);
 cout << "Time taken: " << duration.count() << " microseconds" << endl;
+cout<<"Insertion"<<endl;
+start = high_resolution_clock::now();
+insertion(stress5);
+end = high_resolution_clock::now();
+duration = duration_cast<microseconds>(end - start);
+cout << "Time taken: " << duration.count() << " microseconds" << endl;
+
+
 
 
 }
