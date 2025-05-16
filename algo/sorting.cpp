@@ -50,9 +50,20 @@ void selection(vector<int> arr){
 
 }
 
+void insertion(vector<int> arr) {
 
+    for (int i = 1; i < arr.size(); i++) { 
 
-
+        int current = arr[i]; //literally the current value
+        int prev = i - 1; //the previous value before current
+        while (prev>= 0 && arr[prev] > current) { //loop as long as it doesn't go out of bounds and previous value is larger than current
+            arr[prev + 1] = arr[prev]; //the element gets shifted to the right side. 
+            prev--; //decreasing loop variable to go towards the left
+        }
+        arr[prev + 1] = current;
+    }
+    print(arr);
+}
 
 
 int main(){
@@ -69,47 +80,55 @@ cout << "Time taken: " << duration.count() << " microseconds" << endl;
 vector<int> test2 = {5, 4, 3, 2, 1};
 bubble(test2);
 selection(test2);
+insertion(test2);
 
 // 🧼 Test Case 3: All Elements Same
 vector<int> test3 = {7, 7, 7, 7, 7};
 bubble(test3);
 selection(test3);
+insertion(test3);
 
 
 // 🧼 Test Case 4: Random Order
 vector<int> test4 = {3, 1, 4, 2, 5};
 bubble(test4);
 selection(test4);
+insertion(test4);
 
 
 // 🧼 Test Case 5: Negative Numbers
 vector<int> test5 = {-3, -1, -4, -2, -5};
 bubble(test5);
 selection(test5);
+insertion(test5);
 
 
 // 🧼 Test Case 6: Single Element
 vector<int> test6 = {9};
 bubble(test6);
 selection(test6);
+insertion(test6);
 
 
 // 🧼 Test Case 7: Two Elements Sorted
 vector<int> test7 = {1, 2};
 bubble(test7);
 selection(test7);
+insertion(test7);
 
 
 // 🧼 Test Case 8: Two Elements Unsorted
 vector<int> test8 = {2, 1};
 bubble(test8);
 selection(test8);
+insertion(test8);
 
 
 // 🧼 Test Case 9: Large Range
 vector<int> test9 = {100, 2000, 30, 400, 500};
 bubble(test9);
 selection(test9);
+insertion(test9);
 
 
 
@@ -117,6 +136,9 @@ selection(test9);
 // Input: []
 // Expected Output: (no output, but no crash either)
 bubble({});
+selection({});
+insertion({});
+
 
 // 🚨 Stress 1: 1,000 elements in reverse
 // Bubble sort's worst-case, your patience's final test
@@ -132,6 +154,7 @@ cout<<"Selection"<<endl;
 start = high_resolution_clock::now();
 selection(stress1);
 end = high_resolution_clock::now();
+cout<<"Insertion"<<endl;
 
 
 
