@@ -78,6 +78,7 @@ int main(){
     vec3.empty();// to check whether the vector is empty or not.
     
     cout<<*(vec.begin())<<endl; //returns the first iterator of the vector.
-    cout<<*(vec.end())<<endl; //returns the last iterator of the vector. //points to the next value after the last value of the vector.
+    cout<<*(vec.end()-1)<<endl; //returns the last iterator of the vector. //points to the next value after the last value of the vector.
     //iterator can be considered as a pointer to the vector.
+    cout<<*(vec.rbegin())<<endl; 
 }
