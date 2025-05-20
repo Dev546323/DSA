@@ -21,32 +21,40 @@
 - Constant time insertion/deletion anywhere.
 - No random access (unlike vectors).
 
-### Pair
+### Pair (`pair.cpp`)
 - Used to store two values.
 - Common in sorting and mapping.
 
-### Stack
+### Stack (`stack.cpp`)
 - LIFO (Last In, First Out).
 - Push/pop from the top only.
 - Useful for recursion, parsing, etc.
 
-### Queue
+### Queue (`queue.cpp`)
 - FIFO (First In, First Out).
 - Push at back, pop from front.
 - Used in BFS, scheduling, etc.
+    ### Priority Queue
+    - Max Heap by default (`priority_queue<int>`).
+        - highest value stays on top
+    - For Min Heap: `priority_queue<int, vector<int>, greater<int>>`.
+        - lowest value stays on top 
+    - Useful for greedy algorithms, Dijkstra’s, etc.
+    - interanlly a  binary tree
+
 
 ### Map
 - Stores key-value pairs in sorted order by key.
 - O(log n) insertion/search using Red-Black Tree.
+    ### Multimap
+    - Allows duplicate keys.
+    - Elements stored in sorted order.
 
-### Multimap
-- Allows duplicate keys.
-- Elements stored in sorted order.
+    ### Unordered Map
+    - Hash table implementation.
+    - Average O(1) insertion/search.
+    - No guaranteed order.
 
-### Unordered Map
-- Hash table implementation.
-- Average O(1) insertion/search.
-- No guaranteed order.
 
 ### Set
 - Stores unique elements in sorted order.
@@ -58,3 +66,4 @@
 ### Unordered Set
 - Like set, but no order guarantee.
 - Based on hash table.
+
