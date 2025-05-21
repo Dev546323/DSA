@@ -1,6 +1,8 @@
 //consider vector as a dyanmic type array 
 #include<iostream>
 #include<vector>
+#include<algorithm>
+
 using namespace std;
 
 
@@ -81,4 +83,7 @@ int main(){
     cout<<*(vec.end()-1)<<endl; //returns the last iterator of the vector. //points to the next value after the last value of the vector.
     //iterator can be considered as a pointer to the vector.
     cout<<*(vec.rbegin())<<endl; 
+
+    cout<<*max_element(vec.begin(),vec.end())<<endl; //returns the max element of the vector.
+    cout<<*min_element(vec.begin(),vec.end())<<endl; //returns the min element of the vector.
 }

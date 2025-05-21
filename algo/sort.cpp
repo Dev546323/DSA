@@ -1,7 +1,7 @@
 #include<iostream>
 #include<algorithm>
 #include<vector>
-#include "/home/yestodrugs/Desktop/print.h"
+#include "/home/yestodrugs/Desktop/DSA/print.h"
 
 using namespace std;
 
@@ -22,15 +22,39 @@ int main(){
 
     vector<int> v = {37, 82, 14, 59, 23, 71, 46, 5, 68, 91};
     sort(v.begin(), v.end(), greater<int>()); //the comparator makes the function sort in descending order
-    print<int> p1(v);
 
     // Sample vector of 5 pairs with fixed values for testing
     vector<pair<int, int>> pairs = {
         {42, 17},
         {89, 53},
-        {6, 77},
+        {61, 77},
         {31, 24},
-        {58, 92}
+        {58, 92},
+        {13, 10},
+        {27, 10},
+        {45, 10},
+        {62, 10},
+        {88, 10}
     };
     print <vector<pair<int, int>>> p2(pairs);
+
+    sort(pairs.begin(), pairs.end(), compare);
+    cout << "Sorted pairs: (second value takes priority)" << endl;
+    print <vector<pair<int, int>>> p3(pairs);
+
+    print<int> p1(v);
+    reverse(v.begin(), v.end()); 
+    cout << "Reversed vector: " << endl;
+    print<int> p4(v);
+    next_permutation(v.begin(), v.end()); 
+    cout << "Next permutation: " << endl;
+    print<int> p5(v);
+
+    cout<<"Max Element: "<<*(max_element(v.begin(), v.end()))<<endl;
+    cout<<"min Element: "<<*(min_element(v.begin(), v.end()))<<endl;
+    cout<<binary_search(v.begin(), v.end(), 37)<<endl; //returns true or false
+    cout<<binary_search(v.begin(), v.end(), 36/*target*/)<<endl; //returns true or false
+
+
+
 }
