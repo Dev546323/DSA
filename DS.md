@@ -69,6 +69,7 @@
 
 ### Set (`set.cpp`)
 - Stores unique elements in sorted order.
+- ignores duplicate values. 
 - Based on balanced BST.
     ### Multiset
     - Like set, but allows duplicates.
