@@ -80,4 +80,7 @@
 
 EXTRA
 ### while passing values () passes values directly ({}) creates an object that passes the value. 
-- emplace function doesn't require object creation 
+- emplace function doesn't require object creation
+
+## comparators 
+- they are nothing but boolean functions. check (`sort.cpp`) to see a 

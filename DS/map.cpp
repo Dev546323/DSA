@@ -1,16 +1,10 @@
 #include <iostream>
 #include <map>
 #include <unordered_map>
+#include <vector>
+#include "/home/yestodrugs/Desktop/DSA/print.h"
 
 using namespace std;
-
-// Generic print_map function for map, multimap, and unordered_map
-template <typename MapType>
-void print_map(const MapType& m) {
-    for (const auto& pair : m) {
-        cout << pair.first << ": " << pair.second << endl;
-    }
-}
 
 int main() {
     // Declare a map with int keys and string values
@@ -26,7 +20,7 @@ int main() {
     m[7] = "seven";
 
     cout << "Map elements (sorted by key):" << endl;
-    print_map(m); // Map is always sorted by key
+    print<map<int, string>> p(m);
 
     // Insert a new key-value pair using insert()
     m.insert({8, "eight"});
@@ -34,7 +28,7 @@ int main() {
     // Update the value for an existing key
     m[5] = "five updated";
     cout << endl << "Map after update:" << endl;
-    print_map(m);
+    print<map<int, string>> p2(m);
 
     // Accessing values by key
     cout << endl << "Value for key 7: " << m[7] << endl;
@@ -43,7 +37,7 @@ int main() {
 
     m.erase(5);
     cout << endl << "Map after erasing key 5:" << endl;
-    print_map(m);
+    print<map<int, string>> p3(m);
 
     // Check if a key exists
     //find command returns an iterator to the element if found, otherwise it returns the end iterator
@@ -69,7 +63,7 @@ int main() {
     mm.insert({8, "octo"});
 
     cout << endl << "Multimap elements (sorted by key):" << endl;
-    print_map(mm);
+    print<multimap<int, string>> p4(mm);
 
     // To modify a specific value among multiple entries with the same key in a multimap, you must find its iterator and update it directly.
     // Example: Change "uno" to "uno updated" for key 1
@@ -83,7 +77,7 @@ int main() {
     
     mm.erase(3); //erase all key instances 
     cout << endl << "Multimap after updates:    " << endl;
-    print_map(mm);
+    print<multimap<int, string>> p5(mm);
 
     // UNORDERED MAP
     unordered_map<int, string> um;
@@ -98,7 +92,7 @@ int main() {
     um[9] = "nine";
 
     cout << endl << "Unordered map elements (not sorted):" << endl; 
-    print_map(um);
+    print<unordered_map<int, string>> p6(um);
     // Unordered maps do not maintain any order, so the output may vary
     return 0;
 }
