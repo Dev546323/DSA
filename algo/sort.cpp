@@ -1,7 +1,7 @@
 #include<iostream>
 #include<algorithm>
 #include<vector>
-#include "/home/yestodrugs/Desktop/DSA/print.h"
+#include "/home/yestodrugs/Desktop/print.h"
 
 using namespace std;
 
