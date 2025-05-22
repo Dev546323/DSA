@@ -77,6 +77,11 @@
     - Like set, but no order guarantee.
     - Based on hash table.
 
+## STRINGS (`string.cpp`)
+- string is not a data type in cpp, instead strings are treated a character vectors.
+- strings always end with a `/0`
+- `getline(cin,string variable, delimiter)`
+
 
 EXTRA
 ### while passing values () passes values directly ({}) creates an object that passes the value. 
