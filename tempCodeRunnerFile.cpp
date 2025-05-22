@@ -2,5 +2,9 @@
 using namespace std; 
 
 int main(){
-    cout<<7/2;
+    cout<<(int)'9'<<endl;
+
+    for(int i=48;i<123;i++){
+        cout<<" "<<(char)i;
+    }
 }
