@@ -83,9 +83,20 @@
 - `getline(cin,string variable, delimiter)`
 
 
+### 2-D Vectors (`2-Dvector.cpp`)
+- A dynamic array of arrays in C++.
+- Syntax: `vector<vector<int>> matrix;`
+- Used to represent grids, tables, matrices, and graphs.
+- Rows can have variable lengths (unlike fixed-size 2D arrays).
+- Access elements via `matrix[i][j]`.
+- Supports all STL vector operations (`push_back`, `resize`, etc.).
+- Useful for problems involving matrices or dynamic 2D data structures.
+
+
+
 EXTRA
 ### while passing values () passes values directly ({}) creates an object that passes the value. 
 - emplace function doesn't require object creation
 
 ## comparators 
-- they are nothing but boolean functions. check (`sort.cpp`) to see a 
+- they are nothing but boolean functions. check (`sort.cpp`) to see a comparator

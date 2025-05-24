@@ -235,3 +235,17 @@ public:
         cout << s << endl;
     }
 };
+
+template<typename T>
+class print<vector<vector<T>>> {
+    public:
+    print(vector<vector<T>> & matrix){
+        cout<<endl;
+        for(auto row: matrix){
+            for(auto i:row){
+                cout<< i<<" ";
+            }
+            cout<<endl;
+        }
+    }
+};
