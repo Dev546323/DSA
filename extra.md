@@ -91,3 +91,39 @@ Purpose: Find the maximum profit from buying and selling a stock once.
 - Track the minimum price seen so far.
 - Update max profit with current price - min price.
 - One-pass linear time solution.
+
+## compress.cpp
+Purpose: Compress a character array in-place by replacing sequences of the same character with the character followed by its count.
+
+- Iterates through the array, counting consecutive duplicates.
+- For each group, appends the character and its count (if >1) to the array.
+- Handles single and multi-digit counts.
+- Erases the original segment and prints the compressed result.
+
+## reverse.cpp
+Purpose: Reverse the order of words in a string, preserving the words themselves.
+
+- Reverses the entire string, then reverses each word to restore their original order.
+- Skips extra spaces between words.
+- Returns the resulting string with words in reverse order, separated by single spaces.
+
+## sieve.cpp
+Purpose: Count the number of prime numbers less than or equal to a given number using the Sieve of Eratosthenes.
+
+- Uses a boolean vector to mark non-prime numbers.
+- Skips even numbers for efficiency, except for 2.
+- Iterates from 3 upwards, marking multiples as non-prime.
+- Handles edge cases (n = 0, 1, 2) efficiently.
+- Returns the count of primes up to n.
+
+## HCF.cpp
+Purpose: Compute the Greatest Common Divisor (GCD) and Least Common Multiple (LCM) of two integers using both brute-force and Euclidean algorithms.
+
+- `brute`: Checks all possible divisors from min(a, b) down to 1.
+- `euclid`: Uses the efficient Euclidean algorithm (modulus-based).
+- Handles negative and zero inputs robustly.
+- Includes LCM calculation using GCD.
+- Measures and compares execution time for both GCD methods.
+- Includes comprehensive test cases for correctness and performance.
+
+
