@@ -26,6 +26,9 @@ private:
     stack<T> st;
     list<T> l;
     priority_queue<T, vector<T>, greater<T>> pq_min;
+    pair<T, T> p;
+    vector<pair<T, T>> vp;
+    string str;
    
 public:
     void p_vector() {
@@ -102,6 +105,21 @@ public:
         }
         cout << endl;
     }
+    void p_pair() {
+        cout << endl;
+        cout << p.first << " " << p.second << endl;
+    }
+    void p_vector_pair() {
+        cout << endl;
+        for (auto& i : vp) {
+            cout << i.first << " " << i.second << endl;
+        }
+        cout << endl;
+    }
+    void p_string() {
+        cout << endl;
+        cout << str << endl;
+    }
  
     print(vector<T>& v) {
         this->v = v;
@@ -148,6 +166,18 @@ public:
     print(const T (&arr)[N]) {
         v = vector<T>(arr, arr + N);
         p_vector();
+    }
+    print(pair<T, T>& p) {
+        this->p = p;
+        p_pair();
+    }
+    print(vector<pair<T, T>>& vp) {
+        this->vp = vp;
+        p_vector_pair();
+    }
+    print(const string& str) {
+        this->str = str;
+        p_string();
     }
 
     print() = default;
@@ -225,16 +255,16 @@ public:
         cout << endl;
     }
 };
-template <>
-class print<string> {
-private:
-    string str;
-public:
-    print(const string& s) {
-        cout << endl;
-        cout << s << endl;
-    }
-};
+// template <>
+// class print<string> {
+// private:
+//     string str;
+// public:
+//     print(const string& s) {
+//         cout << endl;
+//         cout << s << endl;
+//     }
+// };
 
 template<typename T>
 class print<vector<vector<T>>> {
