@@ -126,4 +126,20 @@ Purpose: Compute the Greatest Common Divisor (GCD) and Least Common Multiple (LC
 - Measures and compares execution time for both GCD methods.
 - Includes comprehensive test cases for correctness and performance.
 
+## slow_fast.cpp
+Purpose: Find the duplicate number in an array using Floyd's Tortoise and Hare (cycle detection) algorithm.
+
+- Uses two pointers (slow and fast) to detect a cycle in the array, treating values as next indices.
+- Efficiently finds the duplicate without modifying the array or using extra space.
+- Handles various edge cases and large test cases.
+- Time Complexity: O(n), Space Complexity: O(1).
+
+## twosum.cpp
+Purpose: Solve the Two Sum problem using multiple approaches and benchmark their performance.
+
+- Implements brute-force, two-pointer (after sorting), and hashing (unordered_map) solutions.
+- Includes comprehensive test cases and stress tests for correctness and efficiency.
+- Demonstrates index/value mapping and edge case handling.
+
+
 
