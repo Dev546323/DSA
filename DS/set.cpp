@@ -58,4 +58,11 @@ int main(){
 
     cout<<"Unordered set- no order"<<endl;
     print<int> p3(us);
+
+      if(!s.insert(5).second){ //set insert returns a pair, second is a boolean indicating success
+          //if the element was already present, it will not be inserted again
+          //and the second value will be false
+        cout<<"5 is already present"<<endl;
+      }
+
 }
