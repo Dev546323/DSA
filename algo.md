@@ -1,3 +1,9 @@
+### Recursion (`recursion.cpp`)
+- Everything before the function call is executed at time of function call 
+- everything after(below) the function call is executed at back tracking 
+- output is produced at backtracking not at function call. 
+
+
 ### Binary Search (`binarysearch.cpp`)
 - Works on **sorted** arrays.
 - Reduces time complexity from O(n) to O(log n).
