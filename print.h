@@ -32,11 +32,11 @@ private:
    
 public:
     void p_vector() {
-        cout << endl;
+        cout  <<endl<<"[ ";
         for (auto i : v) {
             cout << i << " ";
         }
-        cout << endl;
+        cout<<"]"<<endl;
     }
     void p_set() {
         cout << endl;

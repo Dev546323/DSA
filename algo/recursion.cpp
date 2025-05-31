@@ -28,6 +28,22 @@ bool binarysearch(vector<int> arr, int target){
     }
 }
 
+void subset(vector<int>& arr, vector<int> &ans, int i=0){
+    if(i == arr.size()) {
+        print<int> p(ans);
+        return;
+    }
+    
+    // Include the current element
+    ans.push_back(arr[i]);
+    subset(arr, ans, i + 1); //makes the tree that includes the current element
+    
+    // Exclude the current element
+    ans.pop_back();
+    subset(arr, ans, i + 1);//makes the tree that excludes the current element
+
+}
+
 
 
 int main() {
@@ -72,6 +88,12 @@ cout<<"6 "<<binarysearch(v6, t6)<<endl; // false
 cout<<"7 "<<binarysearch(v7, t7)<<endl; // false
 cout<<"9 "<<binarysearch(v9, t9)<<endl; // true (any index of 4)
 cout<<"10 "<<binarysearch(v10, t10)<<endl; // true (index 1)
+
+vector<int> ans; 
+
+subset(arr1, ans); // Generate all subsets of arr1
+
+
 
 
     return 0;

@@ -56,3 +56,5 @@
 - Rearranges numbers into the next lexicographically greater permutation.
 - If not possible, returns the lowest (sorted) permutation.
 - Useful in problems involving permutation generation.
+
+subset recursion, redo. https://www.youtube.com/watch?v=pNzljlzDCiI&list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt&index=47
