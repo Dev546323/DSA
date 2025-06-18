@@ -34,7 +34,7 @@ class teacher {
         *rating = new_rating; // dereference pointer to assign value
     }
     void printDetails() {
-        cout << "Name: " << name << endl;
+        cout << "\nName: " << name << endl;
         cout << "Department: " << department << endl;
         cout << "Subject: " << subject << endl;
         cout << "Salary: " << salary << endl;
@@ -58,6 +58,10 @@ class teacher {
         *(this->rating) = *(obj.rating); 
        // this->rating = obj.rating;  //shallow copy, retains the same value irrespective of the object
     }
+
+    ~teacher (){
+        delete rating; 
+    }
 };
 
 using namespace std;
@@ -68,6 +72,7 @@ int main() {
     t2.setName("Jane Smith");
     t1.setRating(4.8); 
     t2.printDetails(); //all the details of t1 has been copied to t2
+    cout<<endl;
     t1.setSalary(50000); 
     t1.printDetails();
     return 0;

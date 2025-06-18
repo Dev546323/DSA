@@ -48,6 +48,7 @@ Object-oriented programming is a paradigm based on the concept of #objects, whic
 
 ### 12. Copy Constructor
 - Special constructor used to create a new object as a copy of an existing one.
+- default does shallow copy. 
 
   - **Shallow Copy:**
     - Copies only the pointer; both objects refer to the same memory location.
