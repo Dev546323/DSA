@@ -37,7 +37,25 @@ public:
             head = newnode; 
         }
     }
+    void push_back(T val){
+    Node* newnode = new Node(val); 
+    if (head == nullptr) {
+        head = tail = newnode; 
+    } else {
+        tail->next = newnode; //The current tail points to the new node. 
+        tail = newnode; // the newnode becomes the new tail.
+    }
+}
 
+void pop_front(){ 
+    if (head == nullptr) {
+        cout << "List is empty, nothing to pop." << endl;
+        return;
+    }
+    Node* temp = head; 
+    head = head->next; 
+    delete temp;
+}
     void print() { 
         Node<T>* current = head;
         while (current != nullptr) {
