@@ -4,10 +4,37 @@
 Object-oriented programming is a paradigm based on the concept of #objects, which contain #data (attributes) and #functions (methods).
 
 # 2. Core Concepts (Pillars of OOP)
-- #Encapsulation: Wrapping data and functions into a single unit (class). Keeps data safe from outside interference.
-- #Abstraction: Hiding internal implementation details and showing only necessary features.
-- #Inheritance: One class can inherit properties and methods from another. Promotes code reusability. (See Types of Inheritance below)
-- #Polymorphism: Same function name behaves differently in different contexts (compile-time & run-time).
+# Encapsulation:
+- Wrapping data and functions into a single unit (class). Keeps data safe from outside interference.
+# Abstraction:
+- Hiding internal implementation details and showing only necessary features.
+    - `Abstract Classes` - "abstract" Keyword
+            - Cannot be used to make objects 
+            - Used as a blueprint for other classes. (Inheritance ONLY.)
+
+# Inheritance:
+- One class can inherit properties and methods from another. Promotes code reusability. 
+# Polymorphism:
+- Same function name behaves differently in different contexts.
+- each object have the option to behave differently based on parameters/context. 
+ `Compile Time Polymorphism` 
+    - Function overloading - difference is in parameters
+    - Constructor overloading 
+    - operator overloading - allows custom re-definition of operators.
+    - Templates 
+
+ `Run Time Polymorphism`
+    - Function Overriding- Dependant on inheritance 
+            - Function name and parameters are same but internal logic is different
+            - It prioritizes the function implementation of child over parent class
+            - one way to solve ambiguity to see whether the object belongs to the parent or the child. 
+
+    - Virtual functions – enable late binding and override resolution at run-time
+    - Virtual destructors – ensure correct object cleanup via base class pointer
+    - Pure virtual functions – make a class abstract, enforce overriding
+    - Base class pointer/reference to derived object – triggers dynamic dispatch
+
+
 
 # 3. Class vs Object
 - #Class: Blueprint or template for creating objects.
@@ -22,9 +49,9 @@ Object-oriented programming is a paradigm based on the concept of #objects, whic
 - Used to release resources or memory.
 
 # 6. Access Specifiers
-- `public`: Accessible from outside the class.
+- `public`: Accessible in the class and main function. accessible in derived class
 - `private`: Accessible only within the class.
-- `protected`: Accessible within the class and by derived classes.
+- `protected`: Accessible within the class and the derived class.
 
 # 7. Types of Inheritance
 - `Single Inheritance`: One derived class inherits from one base class.

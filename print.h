@@ -255,16 +255,7 @@ public:
         cout << endl;
     }
 };
-// template <>
-// class print<string> {
-// private:
-//     string str;
-// public:
-//     print(const string& s) {
-//         cout << endl;
-//         cout << s << endl;
-//     }
-// };
+
 
 template<typename T>
 class print<vector<vector<T>>> {
