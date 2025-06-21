@@ -26,6 +26,9 @@ struct linkedList {
  linkedList() {
         head = tail = nullptr; //initializing head and tail to nullptr
     }
+    linkedList(Node<T>* node) {
+    head = node;
+}
 
 
 void insert(T val, int pos){
@@ -108,6 +111,7 @@ void pop_back(){
             cout << current->data << " ";
             current = current->next; 
         }
+        cout<<endl;
     }
     int search(T val){
     if(head == tail or head == nullptr){
