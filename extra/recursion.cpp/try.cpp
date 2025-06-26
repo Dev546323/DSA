@@ -1,6 +1,7 @@
 #include "/home/yestodrugs/Desktop/DSA/print.h"
 #include <iostream>
 #include<vector>
+#include<string>
 
 
 using namespace std;
@@ -17,6 +18,7 @@ void test(int n){
     test(n-2);
     cout << n << " ";
 }
+
 int factorial(int n) {
    if (n <= 1) {
         return 1;
@@ -25,6 +27,7 @@ int factorial(int n) {
     return n* factorial(n - 1);
 
 }
+
 int power(int base, int exp){
     if(exp == 0){
   return 1;       
@@ -54,6 +57,19 @@ int mini(int arr[], int n){
     return min(arr[n-1], mini(arr, n - 1));
 }
 
+bool palindrom(string str, int start = 0, int end = -1){
+    if(end == -1) {
+        end = str.length() - 1; // Initialize end on first call
+    }
+    if (start >= end) {
+        return true; // Base case: if start index meets or exceeds end index, it's a palindrome
+    }
+    if (str[start] != str[end]) {
+        return false; // If characters at start and end don't match, it's not a palindrome
+    }
+    return palindrom(str, start + 1, end - 1); // Recursive call
+}
+
 int main() {
 
     test(25);
@@ -68,6 +84,8 @@ int main() {
     cout << "\nGCD(" << a1 << ", " << b1 << ") = " << GCD(a1, b1) << endl;
     cout << "GCD(" << a2 << ", " << b2 << ") = " << GCD(a2, b2) << endl;
     cout << "GCD(" << a3 << ", " << b3 << ") = " << GCD(a3, b3) << endl;
+    string str = "Hello, World!";
+    
   
     
     return 0;

@@ -1,49 +1,85 @@
-#include<iostream>
-#include "/home/yestodrugs/Desktop/DSA/list.h"
-#include<string>
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <chrono>
+using namespace std;
 
-using namespace std; 
+// Your recursive palindrome function
+bool palindrom(string str, int start = 0, int end = -1){
+    if(end == -1) {
+        end = str.length() - 1;
+    }
+    if (start >= end) {
+        return true;
+    }
+    if(!isalnum(str[start])){
+        return palindrom(str, start + 1, end );
+    }
+    else if(!isalnum(str[end])){
+        return palindrom(str, start, end - 1);
+    }
+    if(tolower(str[start]) != tolower(str[end])){
+        return false;
+    }
+    return palindrom(str, start + 1, end - 1);
+}
 
-int main(){
-     cout << "=== Integer DoubleLinkedList ===" << endl;
-    doublylinkedlist<int> list1;
-    list1.push_back(10);
-    list1.push_back(20);
-    list1.push_front(5);
-    list1.insert(15, 2); // insert 15 at position 2
-    list1.print();       // Expected: 5 10 15 20
-    list1.pop_front();   // Removes 5
-    list1.pop_back();    // Removes 20
-    list1.print();       // Expected: 10 15
-    cout << "Search for 15: ";
-     list1.search(15)  ;
-    cout << "Search for 5: ";
-     list1.search(5)  ;
+// Your iterative palindrome function
+bool isPalindrome(string str){
+    int start = 0;
+    int end = str.length() - 1;
+    while(start <= end){
+        if(!isalnum(str[start])){
+            start++;
+            continue;
+        }
+        else if(!isalnum(str[end])){
+            end--;
+            continue;
+        }
+        if(tolower(str[start]) != tolower(str[end])){
+            return false;
+        }
+        start++;
+        end--;
+    }
+    return true;
+}
 
-    cout << "\n=== Char DoubleLinkedList ===" << endl;
-    doublylinkedlist<char> list2;
-    list2.push_back('a');
-    list2.push_back('c');
-    list2.insert('b', 1); // insert 'b' between a and c
-    list2.print();        // Expected: a b c
-    list2.pop_front();    // Removes a
-    list2.pop_back();     // Removes c
-    list2.print();        // Expected: b
-    cout << "Search for b: " ;
-    list2.search('b')  ;
-    cout << "Search for a: ";
-     list2.search('a')  ;
+// Generates a massive palindrome with non-alphanumeric noise
+string generateStressPalindrome(size_t size) {
+    string half;
+    for (size_t i = 0; i < size / 2; ++i) {
+        char c = 'a' + (i % 26);
+        half += (i % 11 == 0) ? '@' : c;  // sprinkle non-alnum
+    }
 
-    cout << "\n=== String DoubleLinkedList ===" << endl;
-    doublylinkedlist<string> list3;
-    list3.push_back("hello");
-    list3.push_front("world");
-    list3.insert("dear", 1); // insert "dear" between world and hello
-    list3.print();           // Expected: world dear hello
-    list3.pop_back();        // Removes hello
-    list3.print();           // Expected: world dear
-    cout << "Search for dear: ";
-     list3.search("dear") ;
-    cout << "Search for hello: ";
-     list3.search("hello") ;
+    string full = half;
+    if (size % 2 != 0) full += 'Z';  // center character for odd lengths
+
+    reverse(half.begin(), half.end());
+    full += half;
+
+    return full;
+}
+
+int main() {
+    size_t testSize = 1'000'0; // 1 million characters
+    string test = generateStressPalindrome(testSize);
+
+    // Test recursive
+    auto start1 = chrono::high_resolution_clock::now();
+    bool recResult = palindrom(test);
+    auto end1 = chrono::high_resolution_clock::now();
+    cout << "Recursive: " << (recResult ? "true" : "false") << endl;
+    cout << "Recursive time: " << chrono::duration<double, milli>(end1 - start1).count() << " ms\n";
+
+    // Test iterative
+    auto start2 = chrono::high_resolution_clock::now();
+    bool iterResult = isPalindrome(test);
+    auto end2 = chrono::high_resolution_clock::now();
+    cout << "Iterative: " << (iterResult ? "true" : "false") << endl;
+    cout << "Iterative time: " << chrono::duration<double, milli>(end2 - start2).count() << " ms\n";
+
+    return 0;
 }
