@@ -71,7 +71,9 @@ int main() {
     reverse(str);
     cout << "Reversed string: " << str << endl;
     reverse(str); 
-    uppercase(str);
-    cout << "Uppercase string: " << str << endl;
+
+    //uppercase(str);
+    //cout << "Uppercase string: " << str << endl;
+    
     return 0;
 }
