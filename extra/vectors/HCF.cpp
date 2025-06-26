@@ -34,6 +34,10 @@ int euclid(int a, int b) {
         }
     }
     return a; // GCD is now in 'a'
+
+    /*Recursion:-
+    return euclid(b,a%b)
+    done that's the answer.*/
 }
 
 int LCM (int a, int b){ //LCM = (a*b)/HCF
