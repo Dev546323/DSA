@@ -10,6 +10,8 @@
 #include <array>
 #include <map>
 #include <unordered_map>
+#include <chrono>
+#include "/home/yestodrugs/Desktop/DSA/list.h"
 
 using namespace std;
 
@@ -38,6 +40,14 @@ public:
         }
         cout<<"]"<<endl;
     }
+      void p_vector(int n) {
+        cout  <<endl<<"[ ";
+        for (int i=0; i < n; ++i) {
+            cout << v[i] << " ";
+        }
+        cout<<"]"<<endl;
+    }
+
     void p_set() {
         cout << endl;
         for (auto i : s) {
@@ -125,6 +135,11 @@ public:
         this->v = v;
         p_vector();
     }
+     print(vector<T>& v, int n) {
+        this->v = v;
+        p_vector(n);
+    }
+
     print(set<T>& s) {
         this->s = s;
         p_set();
@@ -269,4 +284,38 @@ class print<vector<vector<T>>> {
             cout<<endl;
         }
     }
+};
+
+using namespace std::chrono;
+
+class timer{
+private:
+    high_resolution_clock::time_point start_t;
+    high_resolution_clock::time_point end_t;
+ public:
+    void start(){
+         start_t = high_resolution_clock::now();
+    }
+    void end(){
+         end_t = high_resolution_clock::now();
+    }
+
+    void seconds(string s){
+auto duration = std::chrono::duration_cast<std::chrono::seconds>(end_t - start_t);
+        cout << s<<": " << duration.count() << " seconds" << endl;
+    }
+    void milliseconds(string s){
+       auto duration = duration_cast<chrono::milliseconds>(end_t - start_t);
+        cout << s<<": " << duration.count() << " milliseconds" << endl;
+    }
+    void microseconds(string s){
+        auto duration = duration_cast<chrono::microseconds>(end_t - start_t);
+        cout << s<<": " << duration.count() << " microseconds" << endl;
+    }
+    void nanoseconds(string s){
+        auto duration = duration_cast<chrono::nanoseconds>(end_t - start_t);
+        cout << s <<": "<< duration.count() << " nanoseconds" << endl;
+    }
+
+  
 };
