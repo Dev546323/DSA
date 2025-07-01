@@ -278,10 +278,11 @@ class print<vector<vector<T>>> {
     print(vector<vector<T>> & matrix){
         cout<<endl;
         for(auto row: matrix){
+            cout<<"[ ";
             for(auto i:row){
                 cout<< i<<" ";
             }
-            cout<<endl;
+            cout<<"]"<<endl;
         }
     }
 };

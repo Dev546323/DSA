@@ -33,15 +33,18 @@ vector<vector<int>> permutations(vector<int>& arr, vector<vector<int>>& permutat
     return permutation;
   }
   for(int j=i;j<arr.size();j++){
-    swap(arr[i], arr[j]);
-    permutations(arr, permutation, i + 1);
+    if ( i!=j and arr[i] == arr[j]) continue; // skip duplicates to avoid repeated permutations
+    swap(arr[i], arr[j]); // swap to create a new permutation
+    
+    permutations(arr, permutation, i + 1);// recursively call for the next index
+
     swap(arr[i], arr[j]); // backtrack to original state
   }
   return permutation;
 } 
 
 int main() {
-    vector<int> arr = {1,2,3};
+    vector<int> arr = {1,2,3,3};
     vector<int> subset;
   printsubsets(arr, subset, 0);
     vector<vector<int>> permutation;
