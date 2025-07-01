@@ -130,7 +130,16 @@ public:
         cout << endl;
         cout << str << endl;
     }
- 
+    print(set<vector<T>>& sv) {
+        cout << endl;
+        for (auto& i : sv) {
+            cout << "[ ";
+            for (auto j : i) {
+                cout << j << " ";
+            }
+            cout << "]" << endl;
+        }
+    }
     print(vector<T>& v) {
         this->v = v;
         p_vector();
